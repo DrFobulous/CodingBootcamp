@@ -76,3 +76,13 @@ body{
 .about {
     font-family: 'Libre Baskerville', serif;
 }
+
+@media (max-width: 750px){
+    .footer_blurb {
+        text-align: left;
+    }
+}
+
+.modal{
+    font-family: 'Libre Baskerville', serif 
+}
