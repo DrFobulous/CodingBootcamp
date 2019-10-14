@@ -28,16 +28,13 @@
       </div>
       <div class="col-10 offset-1 offset-sm-0 col-sm-5 links">
          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-          Launch demo modal
+          Contribute
         </button>
         <%= link_to 'Contribute','#', data: {toggle: 'modal', target: '#myModal'}%>
           &nbsp;&nbsp;
         <%= link_to 'About', about_path %> 
     </header>
 
-     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      Launch demo modal
-    </button>
 
      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -49,20 +46,18 @@
             <h4 class="Contribute Your Quote" id="myModalLabel">Modal title</h4>
           </div>
           <div class="modal-body">
-            <%= simple_form_for @quote do |f| %>
-              <div class="modal-body">
+            <%= simple_form_for @Quote.new do |f| %>
               <%= f.input :saying, label: "What is the saying you want to add?", Placeholder: "Temporary Quote"%>
-              <br />
               <%= f.input :author, label: "Who is the author?", Placeholder: "Temporary Author" %>
+              <br />
+              <%= f.submit 'Create', class: 'btn btn-danger' %>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <%= f.submit :'Create', class: 'btn btn-danger' %>
+
               </div>
             <% end %>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="mo  dal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
@@ -71,6 +66,7 @@
 
     <hr />
     <br class="clear"/>
+
     <div class="container">
       <% if flash[:error].present? %>
         <div class="col-10 offset-1 alert alert-danger">

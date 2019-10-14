@@ -86,3 +86,18 @@ body{
 .modal{
     font-family: 'Libre Baskerville', serif 
 }
+
+h2 span{
+    color: #dddddd
+}
+
+h1{
+    font-family: 'nobileregular', sans-serif;
+    font-weight:bold;
+    font-size: 48px;
+}
+
+::selection{
+    background-color: #f84342;
+}
+
